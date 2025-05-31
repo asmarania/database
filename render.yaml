@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: sftp-middleman
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python app.py"
+    envVars:
+      - key: SFTP_USER
+        sync: false
+      - key: SFTP_PASS
+        sync: false
+      - key: SFTP_HOST
+        sync: false
